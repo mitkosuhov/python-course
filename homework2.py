@@ -1,6 +1,5 @@
-def suma(a,b):
-    return(a+b)
-a = int(input('Enter a number:'))
-b = int(input('Enter a second number:'))
-
-print(f'The sum of {a} and {b} is {suma(a,b)}')
+massiv = [1,2,3,124,54,6,45,8,9,'abv',True]
+print(massiv[6])
+print(len(massiv))
+list = {4:2,3:3,7:4}
+print(list[7])
