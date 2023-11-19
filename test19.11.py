@@ -8,5 +8,5 @@ while i < 5:
     print(random.choice(boi)+random.choice(num))
     i += 1
 
-
+print('New')
 
