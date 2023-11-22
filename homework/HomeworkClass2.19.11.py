@@ -12,3 +12,4 @@ print(days[-2:])
 print(list(coolors))
 k = list(coolors)[-2:]
 print(coolors[k[1]])
+print(coolors)
