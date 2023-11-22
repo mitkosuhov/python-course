@@ -1,3 +1,3 @@
-num1  = input('Num')
-num2 = int(num1) + 1
-print('Your' , num2)
+num1 = 12
+num2 = 14
+print('My numbers are ', num1 , num2)

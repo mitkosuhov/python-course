@@ -12,4 +12,10 @@ while i < 5:
 
 print('Your hand is ' , hand )
 
+   
+
+
+
+
+
 
