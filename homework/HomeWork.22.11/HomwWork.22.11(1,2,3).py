@@ -16,7 +16,7 @@ if side1 != side2 :
         print('      ',side2,'     ')
         print(' ____________________')
         print('|                    |')
-        print('|        ',face,'     |',side1)
+        print('|        ',face,'    |',side1)
         print('|____________________|')
         print('Лицето на правоъгълника е с площ ',face,'кв.см.')
         
