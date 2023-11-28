@@ -7,9 +7,7 @@ surname = ' Suhov'
 print( name +'\n'+ midname +'\n'+ surname)
 days = ['Monday','Tuesday','Wednesday','Thursday','Friday']
 coolors = {1:'White',3:'Black',5:'Red',7:'Green',9:'Blue'}
-print ( days[4] ,coolors[9] )
 print(days[-2:])
-print(list(coolors))
 k = list(coolors)[-2:]
 print(coolors[k[1]])
-print(coolors)
+
