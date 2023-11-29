@@ -1,3 +1,4 @@
+# Задача 2
 def greething(name,age,sex):
     if age < 16 and sex=='m':
         print (f'Master {name}')
@@ -15,4 +16,4 @@ sex = input('Enter your sex (f/m):')
 if sex=='m' or sex=='f':
     greething(name,age,sex)
 else:
-    print('Wrrong sex stat !')
+    print('Wrong sex stat !')
