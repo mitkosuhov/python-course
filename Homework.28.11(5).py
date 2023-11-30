@@ -1,5 +1,6 @@
 days = int(input('How much days do you want to enter ?'))
 days_add =[]
+mon_count = days_add.count('Monday')
 while days > 0 :
     days_enter = input(f'Enter {days} day of the week :')
 
