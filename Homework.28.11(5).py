@@ -1,13 +1,14 @@
-days = int(input('How much days do you want to enter ?'))
-days_add =[]
-mon_count = days_add.count('Monday')
-while days > 0 :
-    days_enter = input(f'Enter {days} day of the week :')
+#Задача 5
+from collections import Counter
+days_num = int(input('How many days do you whant to enter:'))
+my_days = []
 
-    if days_enter in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']:
-        days_add.append(days_enter)
-        days = days - 1
+while days_num > 0 :
+    day = input(f'Enter a {days_num} day :')
+    if day in ['Monday','Tuesday','Wednesday','Tursday','Friday','Saturday','Sunday']:
+        my_days.append(day)
+        days_num = days_num-1
     else :
         print('Invalid day ')
 
-print(days_add)
+print(Counter(my_days))
