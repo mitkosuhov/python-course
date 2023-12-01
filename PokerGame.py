@@ -1,4 +1,5 @@
 import random 
+from collections import Counter
 
 num = ['Каро 2','Каро 3','Каро 4','Каро 5', 'Каро 6','Каро 7','Каро 8','Каро 9','Каро 10','Каро J','Каро Q','Каро K','Каро A' ,
        'Купа 2','Купа 3','Купа 4','Купа 5', 'Купа 6','Купа 7','Купа 8','Купа 9','Купа 10','Купа J','Купа Q','Купа K','Купа A',
@@ -7,12 +8,13 @@ num = ['Каро 2','Каро 3','Каро 4','Каро 5', 'Каро 6','Кар
 hand = []
 i = 0
 while i < 5:
-    card = random.sample(num,1)
+    card = random. choice(num)
     hand.append(card)
     i += 1
 
 print('Your hand is ' , hand )
 print(len(num))
+print(Counter(hand))
 
    
 
