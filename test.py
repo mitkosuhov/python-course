@@ -23,3 +23,26 @@ print(filter_nums)
 str1 = 'Homeworksandotherstuffihavetoputtinthistext'
 len_str1= int((len(str1))/2)
 print(str1[0::len_str1])
+
+# ФизБъз задача
+for fizzbuzz in range(51):   
+    if fizzbuzz % 3 ==0 and fizzbuzz % 5 == 0 :
+        print('FIzzbuzz')
+    elif fizzbuzz % 3 ==0 :
+        print('Fizz')
+    elif fizzbuzz % 5== 0 :
+        print('Buzz')   
+    else :
+        print(fizzbuzz)    
+
+
+ # Drug primer 
+ # list_nums = []
+for nums in range(1500,2701):
+    if nums % 5 == 0 and nums % 7 == 0 :
+        nums=str(nums)
+        list_nums.append(nums)
+
+print(list_nums)
+print('/'.join(list_nums))
+       
