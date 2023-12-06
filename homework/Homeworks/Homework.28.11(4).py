@@ -1,4 +1,4 @@
-ciname_day = (input('Hor what day do you want a ticket ?'))
+ciname_day = (input('Hor what day do you want a ticket ?')) 
 if ciname_day in ['Monday','Thuesday','Friday'] :
     print (f'You whant a ticket for {ciname_day} that will be 12$')
 elif ciname_day in ['Wednesday','Thursday',] :  
