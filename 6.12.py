@@ -1,9 +1,10 @@
-a = float(input("Въведи страна : "))
-b = float(input("Въведи страна : "))
-c = float(input("Въведи страна : "))
+day = input('Enter a day of the week ')
+day = day.lower()   
 
+match day:
+    case 'monday' | 'friday' | 'thusday':
+        print('12 $')
 
-if a + b > c and                   
 
 
 
