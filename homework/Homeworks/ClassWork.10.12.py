@@ -91,24 +91,24 @@
 #     print(fact)
 
 # print(fact) 
-data_day =int(input('Enter a date:'))
-date_mount =int(input('Enter a mount:'))
-date_year =int(input('Enter a year:'))
-if date_mount != 2 :
-    if data_day >= 30 or data_day ==31 :
-        if date_year > 0 and date_year < 10000 :
-            print('This is legit date ')
-        else:
-            print('Is wrong date')    
-    else :
-        print('Is wrong date ')        
-elif date_mount == 2 :
-    if data_day == 28 or data_day == 29 :
-        if date_year > 0 and date_year < 10000 :
-            print('This is legit date ')
-        else:
-            print('Is wrong date')
-    
+# data_day =int(input('Enter a date:'))
+# date_mount =int(input('Enter a mount:'))
+# date_year =int(input('Enter a year:'))
+# if date_mount != 2 :
+#     if data_day >= 30 or data_day ==31 :
+#         if date_year > 0 and date_year < 10000 :
+#             print('This is legit date ')
+#         else:
+#             print('Is wrong date')    
+#     else :
+#         print('Is wrong date ')        
+# elif date_mount == 2 :
+#     if data_day == 28 or data_day == 29 :
+#         if date_year > 0 and date_year < 10000 :
+#             print('This is legit date ')
+#         else:
+#             print('Is wrong date')
+ 
     
     
     
