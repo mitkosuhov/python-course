@@ -28,3 +28,10 @@ for n in range (10):
     for file in path_for_every:
     
         shutil.move(file, folders[n-1] / file.name)
+anser = input('Do you whant to delete all of the folders ?(tipe "del" if you whant)')
+if anser == "del" :
+    for folder in path_to.iterdir():
+        if folder.is_dir():
+            shutil.rmtree(folder)
+else :
+    print('Ok')            
