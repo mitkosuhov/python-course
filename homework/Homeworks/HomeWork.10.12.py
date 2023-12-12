@@ -21,9 +21,10 @@ for num in range(1,10):
     if not direc.exists():
         direc.mkdir()
     
+for n in range (10):
 
-whit_2 = [file for file in path_to.iterdir() if file.is_file() and file.name.startswith('2')] 
+    path_for_every = [file for file in path_to.iterdir() if file.is_file() and file.name.startswith(f'{str(n)}')] 
 
-for file in whit_2:
+    for file in path_for_every:
     
-    shutil.move(file, folders[1] / file.name)
+        shutil.move(file, folders[n-1] / file.name)
