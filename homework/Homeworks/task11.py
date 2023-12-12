@@ -1,11 +1,14 @@
 import os
 from pathlib import Path
 
-път_до_работен_плот = Path.home() / 'Desktop' / 'task11'/ 'new'
+desck_top_way = Path.home() / 'Desktop' / 'HomeWork.12.12'/ 'new' 
 
 # Проверка и създаване на папката
-if not път_до_работен_плот.exists():
-    път_до_работен_плот.mkdir()
-    print(f'Създадена е нова папка на работния плот с име "нова_папка"')
+if not desck_top_way.exists():
+    desck_top_way.mkdir()
+    print(f'New directory is created ')
 else:
-    print(f'Папка на работния плот с име "нова_папка" вече съществува')
+    print(f'This name all ready exist ')
+file_path = desck_top_way / 'my_file2.txt'    
+with open(file_path,'w') as file :
+    pass
