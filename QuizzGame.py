@@ -1,0 +1,16 @@
+q1  = input('What year Bulgaria was created :\n a)512 b)681 c)732')
+q2 = input('When ww1 started :\n a)1912  b)1922 c)1914 ')
+q3 = input('When ww1 endet :\n a)1918  b)1920 c)1923 ')
+q4 = input('When ww2 started :\n a)1932  b)1934 c)1939')
+q5 = input('When ww2 endet :\n a1945)  b)1947 c)1952')
+q6 = input('Witch aliance Won ww2 :\n a)USSR and USA  b)Spain and Swicerlad c)Germany and Japan ')
+q7 = input('Witch party was controling Germany during the war :\n a)Socialist  b)Comunist c)Nazional socialoist')
+q8 = input('Who was leader of Greath Britan during the war :\n a)Chamberlane  b)Churchil c)Oxford')
+q9 = input('In what major conflict Bulgaria pertisapet in 20 century :\n a)ww1  b)ww2 c)ww1 and ww2')
+q10 = input('When the USSR collaps :\n a)1989  b)1992 c)1997')
+an = [q1,q2,q3,q4,q5,q6,q7,q8,q9,q10]
+corest_an = ['b','c','a','c','a','b','c','a','b','a']
+score_an = sum(x==y for x,y in zip(an,corest_an))
+wrong_an = sum(x!=y for x,y in zip(an,corest_an))
+print(f'You have qest {score_an} questions correct')
+print(f'You have given {wrong_an} questions wrong')
