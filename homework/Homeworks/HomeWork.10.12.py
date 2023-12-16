@@ -35,3 +35,22 @@ if anser == "del" :
             shutil.rmtree(folder)
 else :
     print('Ok')            
+
+
+def print_directory_structure(folder_path, indent=''):
+    for item in os.listdir(folder_path):
+        item_path = os.path.join(folder_path, item)
+        if os.path.isfile(item_path):
+            print(indent + '- ' + item)
+        elif os.path.isdir(item_path):
+            print(indent + '|+ ' + item)
+            print_directory_structure(item_path, indent + '|  ')
+
+path_to = os.path.join(os.path.expanduser('~'), 'Desktop', 'HomeWork.12.12')
+
+# Генериране на файловете и папките тук...
+
+print("Структура на файловете и папките след създаването:")
+print_directory_structure(path_to)
+
+
