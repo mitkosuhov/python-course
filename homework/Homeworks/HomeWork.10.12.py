@@ -28,14 +28,8 @@ for n in range (10):
     for file in path_for_every:
     
         shutil.move(file, folders[n-1] / file.name)
-anser = input('Do you whant to delete all of the folders ?(tipe "del" if you whant)')
-if anser == "del" :
-    for folder in path_to.iterdir():
-        if folder.is_dir():
-            shutil.rmtree(folder)
-else :
-    print('Ok')            
 
+         
 
 def print_directory_structure(folder_path, indent=''):
     for item in os.listdir(folder_path):
@@ -46,11 +40,17 @@ def print_directory_structure(folder_path, indent=''):
             print(indent + '|+ ' + item)
             print_directory_structure(item_path, indent + '|  ')
 
-path_to = os.path.join(os.path.expanduser('~'), 'Desktop', 'HomeWork.12.12')
+path_to1 = os.path.join(os.path.expanduser('~'), 'Desktop', 'HomeWork.12.12')
 
 # Генериране на файловете и папките тук...
 
 print("Структура на файловете и папките след създаването:")
-print_directory_structure(path_to)
+print_directory_structure(path_to1)
 
 
+for folder in path_to.iterdir():
+    if folder.is_dir():
+        for file in folder.iterdir():
+            if file.is_file():
+                file.unlink()  # Изтриване на всички файлове в папката
+        shutil.rmtree(folder)
