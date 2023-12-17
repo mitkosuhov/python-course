@@ -31,7 +31,7 @@ for n in range (10):
 
          
 
-def print_directory_structure(folder_path, indent=''):
+def print_directory_structure(folder_path, indent=''):   
     for item in os.listdir(folder_path):
         item_path = os.path.join(folder_path, item)
         if os.path.isfile(item_path):
