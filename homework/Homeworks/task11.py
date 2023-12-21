@@ -1,14 +1,19 @@
-import os
-from pathlib import Path
+# lide = int(input('Lide:'))
+# tall = int(input('tall:'))
 
-desck_top_way = Path.home() / 'Desktop' / 'HomeWork.12.12'/ 'new' 
+# for i in range(tall):
+#     if i == 0 or i==tall-1:
+#         print('*'*lide)
+#     else :
+#         print(f"*{' '*(lide-2)}*")    
+    
 
-# Проверка и създаване на папката
-if not desck_top_way.exists():
-    desck_top_way.mkdir()
-    print(f'New directory is created ')
-else:
-    print(f'This name all ready exist ')
-file_path = desck_top_way / 'my_file2.txt'    
-with open(file_path,'w') as file :
-    pass
+
+# for i in range(0,4):
+#     for j in range(1):
+#         if i ==0 or i ==3:
+#             print("*"*4)
+#         if i ==1 or i== 2 :
+#             print('*  *')
+
+        

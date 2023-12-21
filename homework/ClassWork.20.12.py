@@ -49,8 +49,10 @@
 #     count -=1
         
 # 7 
-# for i in range(1,11):
+# n =10
+# for i in range(10,0,-1):
 #     print(i)
+    
 
 #8
     
@@ -110,18 +112,18 @@
     
     
 #15 Fibonachi numbers
-nums= [1,1]
-count = 1
-b=nums[0]
-c=nums[1]
+# nums= [1,1]
+# count = 1
+# b=nums[0]
+# c=nums[1]
 
-while count < 10 :
-    a = b +c 
-    print(a)
-    c = b
-    b = a
+# while count < 10 :
+#     a = b +c 
+#     print(a)
+#     c = b
+#     b = a
     
-    count +=1
+#     count +=1
 
 
 
