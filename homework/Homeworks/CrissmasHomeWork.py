@@ -13,7 +13,14 @@ while True:
     elif action1 == '2':
         print(tasks)   
         q1 = int(input('Коя задача искате да прегледате :'))
-        print(tasks[1])
+        if q1 in tasks :
+            print(tasks[q1])
+            continue
+        else:
+            print('Грешно име !!!')
+            continue
+        
+    
 
 
 
