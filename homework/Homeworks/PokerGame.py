@@ -28,6 +28,14 @@ while True :
                 for i in tasks :
                     if q4 in i :
                         print(i)
+                q5 =input('Искате ли да прегледате още задачи ,ако не (stop):')
+                if q5 == 'stop':                   
+                        break
+                elif q5 == 'искам' or q5 == 'да':
+                        continue    
+                else :
+                        print('Грешна команда')
+                        break    
             elif q4 == 'stop':
                 break            
                     
