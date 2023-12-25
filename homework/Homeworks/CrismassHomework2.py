@@ -38,7 +38,34 @@ while True :
                         break    
             elif q4 == 'stop':
                 break            
+    elif action1 == '3':
+         while True :
+              for i in enumerate(tasks) :
+                   print(i)                     
+              q7 =int(input('Коя задача искате да промените :')) 
+              if q7 <= len(tasks):
+                   print(tasks[q7])
+                   q8 = input('Избери 0 за промяна на заглавието и 1 за промяна на задачата :')
+                   if q8 == '0' :
+                        q9 = input('Изберете ново заглавие :')
+                        tasks[q7][0] = q9
+                        print(tasks[q7])
+                   elif q8 == '1':
+                        q10 = input('Изберете ново описание :')
+                        tasks[q7][1] = q10
+                        print(tasks[q7])
+                   else :
+                        print('Грешен избор !!!')  
+              else :
+                   print('Греен избор !!!')
+                               
+
+
                     
+                
+         
+                
+                   
                 
                     
 

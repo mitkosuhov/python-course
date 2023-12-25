@@ -48,9 +48,8 @@
        
 tasks = [['Почистване', 'Почистване на общи части'], ['Преместване', 'Преместване на стари елементи'], ['Сортиране', 'Сортиране на нови елементи']]
 
-q1 = input('Задача: ')
-
-for index, task in enumerate(tasks):
-    if q1 in task:
-        print(f'Задачата {q1} е на позиция {index}')
-        print(task)  # Ако искаш да изведеш самата задача
+for i in enumerate(tasks) :
+    print(i[0])
+ask = int(input('Коя задача искате да промените '))
+if ask <= len(tasks):
+    print(tasks[ask])
