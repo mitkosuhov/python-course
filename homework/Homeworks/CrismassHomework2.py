@@ -43,9 +43,9 @@ while True :
               for i in enumerate(tasks) :
                    print(i)                     
               q7 =int(input('Коя задача искате да промените :')) 
-              if q7 <= len(tasks):
+              if q7 <= (len(tasks)-1):
                    print(tasks[q7])
-                   q8 = input('Избери 0 за промяна на заглавието и 1 за промяна на задачата :')
+                   q8 = input('Избери 0 за промяна на заглавието , 1 за промяна на описанието 2 за промяна на позицията на задачите:')
                    if q8 == '0' :
                         q9 = input('Изберете ново заглавие :')
                         tasks[q7][0] = q9
@@ -54,11 +54,29 @@ while True :
                         q10 = input('Изберете ново описание :')
                         tasks[q7][1] = q10
                         print(tasks[q7])
+                   elif q8 == '2':
+                        q10 = int(input(f'С коя задача искате да смените позията на {tasks[q7]} '))
+                        if q10 <= (len(tasks)-1):
+                            
+                            tasks[q7],tasks[q10] = tasks[q10], tasks[q7]
+                        else :
+                             print('Грешен избор !!!')    
+                      
                    else :
                         print('Грешен избор !!!')  
               else :
                    print('Греен избор !!!')
-                               
+    elif action1 == '4':
+         for i in enumerate(tasks) :
+              print(i)   
+         q11 = int(input('Коя задача искате да изтриете :'))      
+         if q11 <= ((len(tasks))-1) :
+              tasks.pop(q11)       
+         else :
+              print('Грешен избор !!!')   
+
+         for i in tasks :
+              print(i)                      
 
 
                     
