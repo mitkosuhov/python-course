@@ -1,7 +1,7 @@
 tasks = [['Почистване','Почистване на общи части'],['Преместване','Преместване на стари елементи'],['Сортиране','Сортиране на нови елементи']]
 
 while True :
-    action1 = input('1)Въведи задача:\n2)Преглед на задачи:\n3)Редактиране на задача:\n4)Изтриване на задача:\nИзход:\nИзбор:...')
+    action1 = input('1)Въведи задача:\n2)Преглед на задачи:\n3)Редактиране на задача:\n4)Изтриване на задача:\n5)Изход:\nИзбор:...')
     if action1 == '1' :
         while True :
             q1 = input('Име на задача?')
@@ -21,9 +21,9 @@ while True :
                 break  
     elif action1 == '2' : 
         while True:
-            for i in tasks:
-                    print(i[0])
-            q4 = input('Коя задача искате да прегледате ?')
+            for i in enumerate(tasks):
+                    print(i)
+            q4 = int(input('Коя задача искате да прегледате ?'))
             if q4 != 'stop':       
                 for i in tasks :
                     if q4 in i :
@@ -77,7 +77,8 @@ while True :
 
          for i in tasks :
               print(i)                      
-
+    elif action1 == '5':
+         break
 
                     
                 
