@@ -21,9 +21,9 @@ while True :
                 break  
     elif action1 == '2' : 
         while True:
-            for i in enumerate(tasks):
-                    print(i)
-            q4 = int(input('Коя задача искате да прегледате ?'))
+            for i in tasks:
+                    print(i[0])
+            q4 = input('Коя задача искате да прегледате ?')
             if q4 != 'stop':       
                 for i in tasks :
                     if q4 in i :
