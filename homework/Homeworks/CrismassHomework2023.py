@@ -23,8 +23,8 @@ while True :
         while True:
             for i in tasks:
                     print(i[0])
-            q4 = input('Коя задача искате да прегледате ?')
-            if q4 != 'stop':       
+            q4 = input('Коя задача искате да прегледате ? / за изход (стоп)')
+            if q4 != 'стоп':       
                 for i in tasks :
                     if q4 in i :
                         print(i)
@@ -71,17 +71,26 @@ while True :
                    else :
                               print('Грешн избор !!!')
     elif action1 == '4':
-         for i in enumerate(tasks,start=1) :
-              print(i)   
-         q11 = int(input('Коя задача искате да изтриете :'))    
-         q11 -= 1  
-         if q11 <= ((len(tasks))-1) :
-              tasks.pop(q11)       
-         else :
-              print('Грешен избор !!!')   
+         while True:
+               for i in enumerate(tasks,start=1) :
+                    print(i)   
+               q11 = int(input('Коя задача искате да изтриете :'))    
+               q11 -= 1  
+               if q11 <= ((len(tasks))-1) :
+                    tasks.pop(q11)       
+                    
+               else :
+                print('Грешен избор !!!')   
 
-         for i in tasks :
-              print(i)                      
+               for i in tasks :
+                    print(i)    
+               q12 = input('Желаете ли да продалжите (да) за изход (стоп)')     
+               if q12 == 'да':
+                    continue
+               elif q12 == 'стоп':
+                    break
+               else:
+                    print('Грешен избор')                  
     elif action1 == '5':
          break
 
