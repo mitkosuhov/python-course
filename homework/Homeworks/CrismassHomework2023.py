@@ -74,13 +74,19 @@ while True :
          while True:
                for i in enumerate(tasks,start=1) :
                     print(i)   
-               q11 = int(input('Коя задача искате да изтриете :'))    
-               q11 -= 1  
-               if q11 <= ((len(tasks))-1) :
-                    tasks.pop(q11)       
+               q11 = input('Коя задача искате да изтриете/ за изход (стоп) :')
+               if q11 == 'стоп':
+                    break
+               elif q11.isdigit():
+                    q11 = int(q11) 
+                    q11 -= 1  
+                    if q11 <= ((len(tasks))-1) :
+                         tasks.pop(q11)       
                     
+                    else :
+                         print('Грешен избор !!!')   
                else :
-                print('Грешен избор !!!')   
+                    print('Грешен избор !!!')          
 
                for i in tasks :
                     print(i)    
