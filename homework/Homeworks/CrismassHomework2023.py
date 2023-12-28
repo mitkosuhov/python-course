@@ -29,7 +29,7 @@ while True :
                     if q4 in i :
                         print(i)
                 q5 =input('Искате ли да прегледате още задачи ,ако не (стоп):')
-                if q5 == 'stop':                   
+                if q5 == 'стоп':                   
                         break
                 elif q5 == 'искам' or q5 == 'да':
                         continue    
