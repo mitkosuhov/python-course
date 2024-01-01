@@ -20,10 +20,10 @@ def clik1():
     root = Tk()
     root.geometry('400x230')
     root.configure(bg='#a27341')
-    task = Entry(root , )
+    task = Entry(root )
     task_de = Entry(root)
-    task.pack(side=RIGHT,anchor=SE,padx=20, pady=20)
-    task_de.pack()
+    task.pack(side=LEFT )
+    task_de.pack(side=LEFT,padx=20, pady=20)
     
     
 def clik2():
