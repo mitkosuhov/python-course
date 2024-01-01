@@ -13,16 +13,21 @@ root.configure(bg='#a27341')
 def display_task(task_title):
     print(f"Selected task: {task_title}")
 
+def close_window():
+        exit(Toplevel)
+
 def clik1():
     root = Tk()
     root.geometry('400x230')
     root.configure(bg='#a27341')
-
-
+    task = Entry(root , )
+    task_de = Entry(root)
+    task.pack(side=RIGHT,anchor=SE,padx=20, pady=20)
+    task_de.pack()
     
     
 def clik2():
-    edit = Tk()
+    edit = Toplevel()
     edit.geometry('400x230')
     edit.configure(bg='#a27341')
     
@@ -30,8 +35,8 @@ def clik2():
         # Създаване на бутон за всяко заглавие от списъка
             title = task[0]
             button = Button(edit, text=title, command=lambda t=title: display_task(t))
-            button.pack()        
-    exit_button = Button(edit, text='Изход',command=edit.quit,bg='#da3636') 
+            button.pack()       
+    exit_button = Button(edit, text='Изход',command=close_window,bg='#da3636') 
     exit_button.pack(side=BOTTOM,anchor=SE,padx=20, pady=20)
 
 
