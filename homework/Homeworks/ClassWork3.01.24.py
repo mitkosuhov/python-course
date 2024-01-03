@@ -10,7 +10,7 @@ def valid_input(choice):
         return False
 def tasks_list():
     for index,i in enumerate(tasks):
-        print(index +1,i)    
+        print(index +1,i) 
 
 while True :
     menu()
@@ -37,10 +37,10 @@ while True :
     elif choice == '2':
         while True :
             tasks_list()
-            q3 = input('Коя задача искта да промените')
-            if isinstance(q3,int) :
+            q3 = int(input('Коя задача искта да промените'))
+            if not isinstance(q3,int) :
                 print(f'Грешен избор!!! изебрете от 1 до {len(tasks)} ')
-            elif not isinstance (q3,int) :
+            elif  isinstance (q3,int) :
                 print(tasks[q3])
                
 
