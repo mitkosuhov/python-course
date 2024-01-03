@@ -23,14 +23,18 @@ def delete_task(task_title):
                 break        
 
 def clik1():
-    root = Tk()
-    root.geometry('400x230')
-    root.configure(bg='#a27341')
-    task = Entry(root )
-    task_de = Entry(root)
-    task.pack(side=LEFT )
-    task_de.pack(side=LEFT,padx=20, pady=20)
-    
+    task = Tk()
+    task.geometry('400x230')
+    task.configure(bg='#a27341')
+    Label(task, text='Задача:').grid(row=0)
+    Label(task, text='Описание').grid(row=5)
+    e1 = Entry(task)
+    e2 = Entry(task)
+    e1.grid(row=1, column=1)
+    e2.grid(row=2, column=2)
+    exit_button = Button(task, text='Изход',command=task.destroy,bg='#da3636') 
+    exit_button.pack(side=BOTTOM,anchor=SE,padx=20, pady=20)
+
     
 def clik2():
     edit = Toplevel()
@@ -43,7 +47,7 @@ def clik2():
             title = task[0]
             button = Button(edit, text=title, command=lambda t=title: display_task(t) )
             button.pack()       
-    exit_button = Button(edit, text='Изход',command=close_window,bg='#da3636') 
+    exit_button = Button(edit, text='Изход',command=edit.destroy,bg='#da3636') 
     exit_button.pack(side=BOTTOM,anchor=SE,padx=20, pady=20)
 
 def clik4():
@@ -55,7 +59,7 @@ def clik4():
     for task in tasks:
         # Създаване на бутон за всяко заглавие от списъка
             title = task[0]
-            button = Button(edit, text=title, command=delete_task, t=title:  delete_task(t))
+            button = Button(edit, text=title, command=lambda  t=title:display_task(t)  )
             button.pack()       
     exit_button = Button(edit, text='Изход',command=close_window,bg='#da3636') 
     exit_button.pack(side=BOTTOM,anchor=SE,padx=20, pady=20)
