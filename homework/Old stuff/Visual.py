@@ -26,14 +26,22 @@ def clik1():
     task = Tk()
     task.geometry('400x230')
     task.configure(bg='#a27341')
-    Label(task, text='Задача:').grid(row=0)
-    Label(task, text='Описание').grid(row=5)
+
+    # Етикети
+    Label(task, text='Задача:').grid(row=0, column=0)
+    Label(task, text='Описание').grid(row=1, column=0)
+
+    # Текстови полета
     e1 = Entry(task)
     e2 = Entry(task)
-    e1.grid(row=1, column=1)
-    e2.grid(row=2, column=2)
-    exit_button = Button(task, text='Изход',command=task.destroy,bg='#da3636') 
-    exit_button.pack(side=BOTTOM,anchor=SE,padx=20, pady=20)
+    e1.grid(row=0, column=1)
+    e2.grid(row=1, column=1)
+
+    # Бутон за изход
+    exit_button = Button(task, text='Изход', command=task.destroy, bg='#da3636')
+    exit_button.grid(row=2, columnspan=2, padx=20, pady=20, sticky='se')
+
+    task.mainloop()
 
     
 def clik2():
