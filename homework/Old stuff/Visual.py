@@ -38,8 +38,8 @@ def clik1():
     e2.grid(row=1, column=1)
 
     # Бутон за изход
-    exit_button = Button(task, text='Изход', command=task.destroy, bg='#da3636')
-    exit_button.grid(row=2, columnspan=2, padx=20, pady=20, sticky='se')
+    exit_button = Button(task, text='Изход',command=task.destroy,bg='#da3636') 
+    exit_button.grid(row=2, column=0, columnspan=2, padx=20, pady=20)
 
     task.mainloop()
 
@@ -56,7 +56,7 @@ def clik2():
             button = Button(edit, text=title, command=lambda t=title: display_task(t) )
             button.pack()       
     exit_button = Button(edit, text='Изход',command=edit.destroy,bg='#da3636') 
-    exit_button.pack(side=BOTTOM,anchor=SE,padx=20, pady=20)
+    exit_button.grid(row=2, column=0, columnspan=2, padx=20, pady=20)
 
 def clik4():
     edit = Toplevel()
