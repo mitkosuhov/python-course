@@ -2,6 +2,7 @@ tasks = [['Почистване','Почистване на общи части'
 
 while True :
     action1 = input('1)Въведи задача:\n2)Преглед на задачи:\n3)Редактиране на задача:\n4)Изтриване на задача:\n5)Изход:\nИзбор:...')
+    
     if action1 == '1' :
         while True :
             q1 = input('Име на задача?')
@@ -23,26 +24,30 @@ while True :
                  print('Грешка !!!')
     elif action1 == '2' : 
         while True:
-            for i in tasks:   # Тук може да прегледаме съдържанието на задачите , но не използваме индекса на задачата , а нейното име .
-                    print(i[0])
-            q4 = input('Коя задача искате да прегледате ? / за изход (стоп)')
-            if q4 != 'стоп':       
-                for i in tasks :
-                    if q4 in i :
-                        print(i)
-                    else :
-                         print('Грешка !!!')  
-                         break
-                q5 =input('Искате ли да прегледате още задачи (да , искам) ,ако не (стоп):')
-                if q5 == 'стоп':                   
-                        break
-                elif q5 == 'искам' or q5 == 'да':
-                        continue    
-                else :
-                        print('Грешна команда')
-                        break    
-            elif q4 == 'стоп':
-                break            
+             for i in enumerate(tasks,start=1) :
+                  print(i)
+             q4 = input('Как изкате да прегледате (индекс) , стоп за изход: ')     
+             if q4 == 'стоп':
+                  break
+             elif q4.isdigit():
+                  q4=int(q4) 
+                  q4 -= 1
+                  if q4 <= (len(tasks)-1):
+                         print(tasks[q4])
+                         q5 = input('Желаете ли да продължите (да) ,(стоп0 за изход :')
+                         if q5 == 'да':
+                              continue
+                         elif q5== 'стоп':
+                              break
+                         else:
+                              print('Грешка !!!')
+                  else :
+                       print('Грешка !!!')  
+                       continue        
+             else:   
+                  print('Грешка !!!')  
+                            
+                                           
     elif action1 == '3':
          while True :
               for i in enumerate(tasks,start=1) :
@@ -71,18 +76,22 @@ while True :
                               
                                    tasks[q7],tasks[q10] = tasks[q10], tasks[q7]
                               else :
-                                   print('Грешен избор !!!')    
-                                  
+                                   print('Грешен избор !!!')   
+                         else :
+                              print('Грешен избор !!!')  
+                                                           
                    else :
                               print('Грешн избор !!!')
     elif action1 == '4':
          while True:
                for i in enumerate(tasks,start=1) :
                     print(i)   
-               q11 = input('Коя задача искате да изтриете/ за изход (стоп) :')
-               if q11 == 'стоп':
+               q15 = input('По име или индекс искате да изтриете задачата (1 за индекс 2 за име ) , стоп за изход :')     
+               if q15 == '1':
+                q11 = input('Коя задача искате да изтриете/ за изход (стоп) :')
+                if q11 == 'стоп':
                     break
-               elif q11.isdigit():
+                elif q11.isdigit():                   
                     q11 = int(q11) 
                     q11 -= 1  
                     if q11 <= ((len(tasks))-1) :
@@ -90,28 +99,39 @@ while True :
                     
                     else :
                          print('Грешен избор !!!')   
-               else :
+                else :
                     print('Грешен избор !!!')          
 
-               for i in tasks :
-                    print(i)    
-               q12 = input('Желаете ли да продалжите (да) за изход (стоп)')     
-               if q12 == 'да':
-                    continue
-               elif q12 == 'стоп':
-                    break
+                for i in tasks :
+                        print(i)    
+                q12 = input('Желаете ли да продалжите (да) за изход (стоп)')     
+                if q12 == 'да':
+                        continue
+                elif q12 == 'стоп':
+                        break
+                else:
+                        print('Грешен избор')   
+               elif q15 == 'стоп':
+                    break    
+               elif q15 == '2':
+                    for i in tasks:
+                         print(i[0])       
+                    q16 = input('Коя задача искате да изтриете :') 
+                    found = False
+                    for inner_list in tasks:
+
+                            if q16 in inner_list:
+                                 
+                                tasks.remove(inner_list)
+                                found = True
+                                break
+                            if not found:
+                             print('Името не е намерено в списъка.')  
+                             break                           
                else:
-                    print('Грешен избор')                  
+                    print('Грешен избор !!!')          
+
     elif action1 == '5':
          break
     else:
          print('Грешен избор !!!')
-
-                    
-                
-         
-                
-                   
-                
-                    
-
