@@ -25,9 +25,13 @@
 # print(obb(num1,num2,num3))
 
 #Задача 3 
-nums = [2,123,1,23,5,78,12,20]
+nums = '1 2 2 3 4 5 67 8 9 08 64 73 23 4 7'
+
 def is_even(x):
+    for  
     return x %2 == 0
-print(filter(is_even,nums))
+
+
+
 
 
