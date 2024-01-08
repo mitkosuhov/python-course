@@ -25,11 +25,36 @@
 # print(obb(num1,num2,num3))
 
 #Задача 3 
-nums = '1 2 2 3 4 5 67 8 9 08 64 73 23 4 7'
+# nums = '1 2 2 3 41 5 6 85 9 8 6 43 72 3 2 3 4 7'
+# all_nums=nums.split()
 
-def is_even(x):
-    for  
-    return x %2 == 0
+
+# def is_even(x):
+#     return int(x) %2 == 0  
+# eve_nums = list(filter(is_even,all_nums))
+# print(eve_nums)
+    
+#Задача 4
+nums = '1 2 2 3 41 5 6 85 9 8 6 43 72 3 2 3 4 7'
+def sort_(x):
+    return  sorted(int(x))
+all_nums=list(map(int,nums.split()))
+print(sort_(nums))
+
+#Задача 5
+# nums = '1 2 2 3 41 5 6 85 9 8 6 43 72 3 2 3 4 7'
+# all_nums=list(map(int,nums.split()))
+
+# def min_(x):
+#     return min(x)
+# def max_(x):
+#     return max(x)
+# def sum_(x):
+#     return sum(x)
+# def fun_(x):
+#     return print(f'The bigest number is {max_(x)}\nThe smallest number is {min_(x)}\nThe sum from the numbers is {sum(x)}')
+# fun_(all_nums)
+
 
 
 
