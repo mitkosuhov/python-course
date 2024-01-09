@@ -50,9 +50,3 @@
 # def fun_(x):
 #     return print(f'The bigest number is {max(x)}\nThe smallest number is {min(x)}\nThe sum from the numbers is {sum(x)}')
 # fun_(all_nums)
-
-
-
-
-
-
