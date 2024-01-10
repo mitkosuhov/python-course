@@ -1,12 +1,3 @@
-day = input('Enter a day of the week ')
-day = day.lower()   
-
-match day:
-    case 'monday' | 'friday' | 'thusday':
-        print('12 $')
-
-
-
-
-
-
+class Car :
+    def __init__(self) :
+        pass
