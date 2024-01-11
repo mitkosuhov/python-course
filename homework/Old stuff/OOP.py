@@ -1,28 +1,16 @@
-import Subject
+class Fruit():
+    def __init__(self,tipe,color,price,count):
+        self.tipe = tipe
+        self.color = color
+        self.price = price
+        self.count = count
+        self.total = self.price *self.count
 
-class Student():
-    def _init_(self , firs_name ,last_name ,number):
-        self.firs_name = firs_name
-        self.last_name = last_name
-        self.number = number
-        self.__gradesOfSubject = []
+    def Eat(self):
+        print('Fruit is eaten ')
 
-    def _init_(self , firs_name ,last_name ,number):
-        self._init_( firs_name ,last_name ,number)
-        self.__gradesOfSubject = grades  
+    def Over(self):
+        print('Fruit is Over ')
 
-    def add_grade(self,grade):
-        self.__grades.append(grade)
 
-    def add_grades(self,grades):
-        self.__grades.append(grades)
-
-    def get_averege(self):
-        final_avareg = 0
-        sum = 0
-        for subject in self.__gradesOfSubject.grades:
-            if subject 
-
-        return sum(g for grades in self.__gradesOfSubject.grades if grades in ['Running','Fitness']) /len(self.__gradesOfSubject.grades)
-
-    
+          

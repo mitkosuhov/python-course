@@ -1,8 +1,8 @@
-import OOP
-import Subject
+from OOP import Fruit
 
-studentOne = Student('Petar','Ivanov',90121)
-studentTwo = Student('John','Dow',1234)
-StudentThree = Student('Mitko','Ivan',1231)
+fruit1 = Fruit('Banana','yelow',5,20)
+fruit2 = Fruit('Apple','red',2,50)
+fruit3 = Fruit('Kiwi','green',2,30)
 
-Onefitness = [Subject]
+
+print(fruit1.Eat)
