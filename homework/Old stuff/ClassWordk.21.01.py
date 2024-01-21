@@ -65,15 +65,15 @@
 # Mitko = TeamLeader('Jake',15461,250000,'tech',5)
 
 
-def sqrt(x):
-    if x < 0 :
-        raise ValueError('Its negativ numnber ')
-    else:
-        return x**x
+# def sqrt(x):
+#     if x < 0 :
+#         raise ValueError('Its negativ numnber ')
+#     else:
+#         return x**x
 
-try:
-    sqrt(-4)
-except ValueError as a :
-    print(f'An error , {a}')
+# try:
+#     sqrt(-4)
+# except ValueError as a :
+#     print(f'An error , {a}')
 
     
