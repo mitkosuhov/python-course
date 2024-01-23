@@ -1,6 +1,12 @@
-from Animal import Animal
-from Mamal import Mamal
+from Mammal import Mammal
 
-class Gorila (Mamal):
-    def __init__(self):
-        super().__init__()
+class Gorila (Mammal):
+    def __init__(self,name):
+        self.name = name
+        super().__init__(name)
+
+
+mammal = Mammal("Stella")
+print(mammal.__class__.__bases__[0].
+__name__)
+print(mammal.name)

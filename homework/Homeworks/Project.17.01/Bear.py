@@ -1,5 +1,11 @@
-from Animal import Animal
-from Mamal import Mamal
-class Bear(Mamal):
-    def __init__(self):
-        super().__init__()
+from Mammal import Mammal
+
+class Bear(Mammal):
+    def __init__(self,name):
+        self.name = name
+        super().__init__(name)
+
+mammal = Mammal("Stella")
+print(mammal.__class__.__bases__[0].
+__name__)
+print(mammal.name)

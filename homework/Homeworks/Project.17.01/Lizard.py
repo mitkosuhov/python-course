@@ -1,7 +1,13 @@
-from Animal import Animal
+
 from Reptile import Reptile
 
-class Lizard(Animal , Reptile):
-    def __init__(self):
-        super().__init__()
-        pass
+class Lizard( Reptile):
+    def __init__(self,name):
+        self.name = name
+        super().__init__(name)
+        
+
+lizard = Lizard("John")
+print(lizard.__class__.__bases__[0].
+__name__)
+print(lizard.name)
