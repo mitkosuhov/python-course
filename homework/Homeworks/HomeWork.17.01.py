@@ -35,37 +35,33 @@
 #Задача 2 
 import roman 
 class Integer :
-    def __init__(self,int_value):
-        self.int_value = int_value
+    def __init__(self,value):
+        self.value = value
 
-    
     def from_float(float_value):
-        if isinstance(float_value,float):
-            return print('Value is float')
-        else :
-            return print("value is not a float")
-        
+        if not isinstance(float_value, float):
+            return "value is not a float"
+
     def from_roman(value):
-        value1 = value.upper()
-        return roman.fromRoman(value1)
+        value = roman.fromRoman(value)    
+        return value   
     
     def from_string(value):
-            
-            if isinstance(value,str):
-                try:
-                    value = int(value)
-                    return print(value)
-                except:
-                    return print('Wrong type ')
-            else:
-                return print('Wrong type ')
+        if  isinstance(value, str):
+            try:
+                return int(value)
+            except ValueError:
+                return "wrong type"
+        else:
+            return "wrong type"   
 
 first_num = Integer(10)
-print(first_num.int_value)
+print(first_num.value)
 second_num = Integer.from_roman("IV")
-# print(second_num.value1)
+print(second_num)
 print(Integer.from_float("2.6"))
 print(Integer.from_string(2.6))
+    
 
 
 # Задача 5 
