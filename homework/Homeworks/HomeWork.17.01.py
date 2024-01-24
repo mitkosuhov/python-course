@@ -33,34 +33,34 @@
 # print(Calculator.subtract(90, 20, -50, 43, 7))
 
 #Задача 2 
-import roman 
-class Integer :
-    def __init__(self,value):
-        self.value = value
+# import roman 
+# class Integer :
+#     def __init__(self,value):
+#         self.value = value
 
-    def from_float(float_value):
-        if not isinstance(float_value, float):
-            return "value is not a float"
+#     def from_float(float_value):
+#         if not isinstance(float_value, float):
+#             return "value is not a float"
 
-    def from_roman(value):
-        value = roman.fromRoman(value)    
-        return value   
+#     def from_roman(value):
+#         value = roman.fromRoman(value)    
+#         return value   
     
-    def from_string(value):
-        if  isinstance(value, str):
-            try:
-                return int(value)
-            except ValueError:
-                return "wrong type"
-        else:
-            return "wrong type"   
+#     def from_string(value):
+#         if  isinstance(value, str):
+#             try:
+#                 return int(value)
+#             except ValueError:
+#                 return "wrong type"
+#         else:
+#             return "wrong type"   
 
-first_num = Integer(10)
-print(first_num.value)
-second_num = Integer.from_roman("IV")
-print(second_num)
-print(Integer.from_float("2.6"))
-print(Integer.from_string(2.6))
+# first_num = Integer(10)
+# print(first_num.value)
+# second_num = Integer.from_roman("IV")
+# print(second_num)
+# print(Integer.from_float("2.6"))
+# print(Integer.from_string(2.6))
     
 
 
