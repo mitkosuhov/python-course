@@ -1,9 +1,9 @@
-#Задача 1
-# import requests
+Задача 1
+import requests
 
-# s = requests.get("https://pypi.org/project/requests/")
+s = requests.get("https://pypi.org/project/requests/")
 
-# print(s.text)
+print(s.text)
 
 # Задача 2
 # from math import sqrt
