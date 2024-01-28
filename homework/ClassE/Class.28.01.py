@@ -70,18 +70,43 @@
 
 # os.remove(file_to_delete)
 
-import sys
-print(sys.version)
+# import sys
+# print(sys.version)
 
-print(sys.platform)
+# print(sys.platform)
 
-try:
-    import sys
-    print("Is Ready")
-except ImportError:
-    print("Is not Ready ")
+# try:
+#     import sys
+#     print("Is Ready")
+# except ImportError:
+#     print("Is not Ready ")
 
-print(sys.path)
+# print(sys.path)
 
+# import pandas
+
+# file = r'C:\Users\Mitko\Desktop\HomeWork.12.12\New.csv'
+
+# print(pandas.read_csv(file))
+# data = pandas.read_csv(file)
+# print(data.info())
+# print(data.describe())
+
+import numpy as np
+
+lista = [0,1,2,3,4]
+ar_1 = np.array(lista)
+
+lista2 = [[0,1,2,3,4],[5,6,7,8,9]]
+ar_2 = np.array(lista2)
+
+# print(ar_1)
+# print(ar_2)
+# result = ar_1 + ar_2
+# print(result)
+print(ar_1[2])
+
+print(np.mean(ar_1))
+print(np.max(ar_1))
 
 
