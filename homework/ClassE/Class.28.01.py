@@ -92,21 +92,21 @@
 # print(data.info())
 # print(data.describe())
 
-import numpy as np
+# import numpy as np
 
-lista = [0,1,2,3,4]
-ar_1 = np.array(lista)
+# lista = [0,1,2,3,4]
+# ar_1 = np.array(lista)
 
-lista2 = [[0,1,2,3,4],[5,6,7,8,9]]
-ar_2 = np.array(lista2)
+# lista2 = [[0,1,2,3,4],[5,6,7,8,9]]
+# ar_2 = np.array(lista2)
 
-# print(ar_1)
-# print(ar_2)
-# result = ar_1 + ar_2
-# print(result)
-print(ar_1[2])
+# # print(ar_1)
+# # print(ar_2)
+# # result = ar_1 + ar_2
+# # print(result)
+# print(ar_1[2])
 
-print(np.mean(ar_1))
-print(np.max(ar_1))
+# print(np.mean(ar_1))
+# print(np.max(ar_1))
 
 
