@@ -11,7 +11,7 @@ test_font = font.render('Igrata mi ',False,'#3d7724').convert()
 cat = pygame.image.load(r'C:\Users\Mitko\Desktop\python2023\homework\GameProject\cat.jpg').convert_alpha()
 cat_posicion = 600
 
-player = pygame.image.load(r'C:\Users\Mitko\Desktop\python2023\homework\GameProject\1.png').convert()
+player = pygame.image.load(r'C:\Users\Mitko\Desktop\python2023\homework\GameProject\1.png').convert_alpha()
 
 
 while True:
@@ -24,7 +24,7 @@ while True:
     screen.blit(grass,(0,350))
 
     screen.blit(test_font,(300,50))
-    cat_posicion -= 10
+    cat_posicion -= 5
     if cat_posicion < -100: cat_posicion = 800
     screen.blit(cat,(cat_posicion,250))
     screen.blit(player,(80,258))
