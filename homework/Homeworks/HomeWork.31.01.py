@@ -20,11 +20,12 @@
 # Задача 3
 
 def revers(x):
-    return revers(x[::-1])
+    if len(x) == 0:
+        return x
+    else:
+        return revers(x[1:]) + x[0]
 
-word = 'mitko'
-print(revers(word))
-
+print(revers(''))
 
 # Задача 4 
 # def palidrome_chek(x):
