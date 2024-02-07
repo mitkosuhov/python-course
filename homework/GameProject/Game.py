@@ -11,7 +11,7 @@ test_font = font.render('Igrata mi ',False,'#3d7724').convert()
 cat = pygame.image.load(r'C:\Users\Mitko\Desktop\python2023\homework\GameProject\cat.jpg').convert_alpha()
 cat_posicion = 600
 
-player = pygame.image.load(r'C:\Users\Mitko\Desktop\python2023\homework\GameProject\1.png').convert_alpha()
+player = pygame.image.load(r'C:\Users\Mitko\Desktop\python2023\homework\GameProject\pln.png').convert_alpha()
 
 
 while True:
