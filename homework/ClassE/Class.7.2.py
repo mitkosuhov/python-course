@@ -1,36 +1,26 @@
-# def algor(x):
-#     first = x[0]
-#     sort = [first]
-#     for i in x [1:] :
-#         if i > first :
-#             sort.append(i)
-#         else :
-#             sort.insert(0 , i)     
-#     return sort        
-# nums = [101,3,5,7,12,4,2,3,65,78,99,1,2,31,74,8,35]
+# Задача 1 
+# def bubble(x):
+#     index_of_list = len(x)-1
+#     corect = True 
+#     while corect :
+#         corect = False
+#         for i in range(0,index_of_list):
+#             if x[i] > x[i+1]:
+#                 x[i],x[i+1] = x[i+1],x[i]
+#                 corect = True 
+            
+#     return x             
+# nums = [9,7,3,2,4,1,6,5,8]
 
+# print(bubble(nums))
 
-# print(algor(nums))
+# Задача 2 
+def binary(x,y):
+    min_index = 0
+    max_idex = len(x) - 1 
+    mid_index = (min_index + max_idex) // 2
+    if x[mid_index] == y :
+        return True 
+    elif x[mid_index] > y :
+        
 
-# def fact(x):
-#     if x ==1:
-#         return 1
-#     else:
-#         return x* fact(x-1)
-
-# print(fact(5))
-
-
-# def fib(x):
-#     if x <= 1 :
-#         return x 
-#     else:
-#         return fib(x-1) + fib(x-2)
-
-# print(fib(35))
-
-
-def dfs(x,y,z):
-    if y not in z :
-        x
-    
