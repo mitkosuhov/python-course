@@ -1,21 +1,14 @@
-def odd(x):
-    odd = 0
-    no_odd = 0
-    for i in x :
-        if i % 2 == 0:
-            odd += 1 
-        elif i % 2 == 1:
-            no_odd += 1 
-        else:
-            pass        
-    return f"четните са {odd} , нечетните са  {no_odd}"
+import sqlite3
+
+conn = sqlite3.connect('test.sqlite')
+
+cur = conn.cursor()
+
+cur.execute("create table test_table(ID int , Name text)")
+
+conn.commit()
+cur.execute("incerte into test_table values (1 , 'Mitko')")
 
 
-            
 
-    
-
-
-nums = [2,3,4,5,6,7,8,9,11,12,14,116,4]
-print(odd(nums))
 
