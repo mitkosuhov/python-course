@@ -8,7 +8,7 @@ cur.execute("create table Products(Name text,Price int)")
 conn.commit()
 
 products = [('Coca Cola', 50),('Pepsi', 150),('Fanta', 120),('Mineral Water', 40),('Vodka', 250),
-            ('Jin', 180),('Oringe juce', 30),('Tequila', 100),('Sprait', 110),('Rum', 350)]
+            ('Jin', 180),('Oringe juice', 30),('Tequila', 100),('Sprait', 110),('Rum', 350)]
 
 cur.executemany("insert into Products values (?,?)",products)
 conn.commit()
@@ -28,7 +28,7 @@ print('Задача 1.2/ Извеждане на продукти с цена н
 for row in rows:
     print(row)
 
-cur.execute("insert into Products values ('Banana juce' , 70)")    
+cur.execute("insert into Products values ('Banana juice' , 70)")    
 conn.commit()
 
 cur.execute("SELECT * FROM Products")
