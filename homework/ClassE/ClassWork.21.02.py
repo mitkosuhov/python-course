@@ -43,11 +43,46 @@ print(f'Задача 1 ')
 for car in cars:
     print(f"Model: {car.model}, Price: {car.price}")
 
-cars = session.query(Car).filter(Car.price >= 50000 ).all()
+cars = session.query(Car).filter(Car.price >= 50000).all()
 print(f'Задача 1.2')
 for car in cars:
     print(f"Model: {car.model}, Price: {car.price}")
 
+# Филтриране на записите, които искаш да изтриеш
+cars_to_delete = session.query(Car).filter(Car.price <= 30000).all()
+
+# Изтриване на филтрираните записи
+for car in cars_to_delete:
+    session.delete(car)
+
+session.commit()
+
+updated_cars = session.query(Car).all()
+
+# Изпечатване на актуализираните данни
+print(f'Задача 2 ')
+for car in updated_cars:
+    print(f"Model: {car.model}, Price: {car.price}")
+
+# Създаване на нов обект 
+new_car = Car(model='Tesla', price=175000)
+
+# Добавяне на новия обект към сесията
+session.add(new_car)
+
+session.commit()    
+
+updated_cars = session.query(Car).all()
+
+
+print(f'Задача 3 ')
+for car in updated_cars:
+    print(f"Model: {car.model}, Price: {car.price}")
+
+cars_sort = session.query(Car).filter(Car.price >= 100000).order_by(Car.price).all()
+print(f'Задача 4')
+for car in cars_sort:
+    print(f"Model: {car.model}, Price: {car.price}")    
 
 # Затваряне на сесията
 session.close()
