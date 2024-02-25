@@ -60,7 +60,7 @@ def clik1():
 
     # Бутон за изход
     exit_button = Button(task, text='Изход', command=task.destroy, bg='#da3636') 
-    exit_button.grid(row=2, column=1, sticky="se", padx=20, pady=20)
+    exit_button.grid(row=350, column=350, sticky="se", padx=20, pady=20)
 
     
 def clik2():
@@ -75,7 +75,7 @@ def clik2():
     for task in tasks:
         # Създаване на бутон за всяко заглавие от списъка
             title = task[0]
-            button = Button(edit, text=title, command=lambda t=title: display_task_description(t) )
+            button = Button(edit, text=title, command=lambda t=title: display_task_description(t),bg='#4d98d0' )
             button.pack()       
     exit_button = Button(edit, text='Изход', command=edit.destroy, bg='#da3636')
     exit_button.pack(side=BOTTOM,anchor=SE,padx=20, pady=20)
@@ -86,10 +86,15 @@ def clik3():
     edit.geometry('400x230')
     edit.configure(bg='#a27341')
 
+    global description_label
+    description_label = Label(edit, text="", bg='#a27341')
+    description_label.pack(padx=20, pady=20)
+    
+
     for task in tasks:
         # Създаване на бутон за всяко заглавие от списъка
             title = task[0]
-            button = Button(edit, text=title, command=lambda  t=title:delete_task(t)  )
+            button = Button(edit, text=title, command=lambda  t=title:delete_task(t) , bg='#4d98d0' )
             button.pack()
     
 
@@ -102,11 +107,16 @@ def clik4():
     edit.geometry('400x230')
     edit.configure(bg='#a27341')
     
+
+    global description_label
+    description_label = Label(edit, text="", bg='#a27341')
+    description_label.pack(padx=20, pady=20)
+    
     
     for task in tasks:
         # Създаване на бутон за всяко заглавие от списъка
             title = task[0]
-            button = Button(edit, text=title, command=lambda  t=title:delete_task(t)  )
+            button = Button(edit, text=title, command=lambda  t=title:delete_task(t),bg='#4d98d0' )
             button.pack()       
     exit_button = Button(edit, text='Изход',command=edit.destroy,bg='#da3636') 
     exit_button.pack(side=BOTTOM,anchor=SE,padx=20, pady=20)
