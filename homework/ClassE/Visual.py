@@ -103,6 +103,7 @@ def clik3():
 
 
 def clik4():
+    global edit
     edit = Toplevel()
     edit.geometry('400x230')
     edit.configure(bg='#a27341')
