@@ -1,5 +1,6 @@
 import sqlite3
 import bcrypt
+import pytest 
 
 def info_table(x):
     select_query = f"SELECT * FROM {x}"
@@ -70,3 +71,4 @@ info_table(table_name)
 
 
 conn.close()
+
