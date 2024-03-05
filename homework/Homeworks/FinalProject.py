@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime
+from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime , func
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
@@ -27,29 +27,53 @@ class Income(Base):
 # Създаване на таблиците в базата данни
 Base.metadata.create_all(engine)
 
-
-while True :
-    menu_direction = input('Menu : \n 1)Check ballans \n 2)add income \n 3)add expense')
-    # Примери за използване на моделите
-    if __name__ == "__main__":
-        def add_expense(x,y):
-            # Добавяне на разход
+def add_expense(x,y):
+                # Добавяне на разход
+                session = Session()
+                new_expense = Expense(amount=x , description=y)
+                session.add(new_expense)
+                session.commit()
+def add_income(x,y):
+            # Добавяне на приход
+                session = Session()
+                new_income = Income(amount=x, source=y)
+                session.add(new_income)
+                session.commit()
+def show_expense():
+            # Преглед на всички разходи
+                session = Session()
+                expenses = session.query(Expense).all()
+                for expense in expenses:
+                    print(f"Expense: {expense.description}, Amount: {expense.amount}, Date: {expense.date}")
+def show_income():
+            # Преглед на всички приходи
+                session = Session()
+                incomes = session.query(Income).all()
+                for income in incomes:
+                    print(f"Income: {income.source}, Amount: {income.amount}, Date: {income.date}")
+def balance():
             session = Session()
-            new_expense = Expense(amount=x , description=y)
-            session.add(new_expense)
+            total_income = session.query(func.sum(Income.amount)).scalar() or 0
+            total_expense = session.query(func.sum(Expense.amount)).scalar() or 0
+            balance = total_income - total_expense
+            print(f"Balance: {balance}")
             session.commit()
+
+if __name__ == "__main__":
+    while True :
+        menu_direction = input('Menu : \n 1)Check ballans \n 2)add income \n 3)add expense')
+        if menu_direction == '1':
+                 balance()
+        elif menu_direction =='2':
+                amount_add = input('Enter amount of income:')  
+                source_add = input('Enter a source of income :') 
+                add_income(amount_add,source_add)
+        elif menu_direction =='3':
+                amount_add = input('Enter amount of income:')  
+                source_add = input('Enter a source of income :') 
+                add_expense(amount_add,source_add)        
+
         
-        # Добавяне на приход
-        new_income = Income(amount=500, source='Salary')
-        session.add(new_income)
-        session.commit()
+            
+            
         
-        # Преглед на всички разходи
-        expenses = session.query(Expense).all()
-        for expense in expenses:
-            print(f"Expense: {expense.description}, Amount: {expense.amount}, Date: {expense.date}")
-        
-        # Преглед на всички приходи
-        incomes = session.query(Income).all()
-        for income in incomes:
-            print(f"Income: {income.source}, Amount: {income.amount}, Date: {income.date}")
