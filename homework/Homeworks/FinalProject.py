@@ -98,7 +98,7 @@ def find_expense_count_daily(x):
 
 if __name__ == "__main__":
     while True :
-        menu_direction = input('Menu : \n 1)Check ballans \n 2)add income \n 3)add expense')
+        menu_direction = input('Menu : \n 1)Check ballans \n 2)Add income \n 3)Add expense \n 4)Graphics of your wallet \n 5)Calculate \n 9)Exit')
         if menu_direction == '1':
                  balance()
         elif menu_direction =='2':
