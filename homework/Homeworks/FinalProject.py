@@ -102,23 +102,32 @@ if __name__ == "__main__":
         if menu_direction == '1':
                  balance()
         elif menu_direction =='2':
-                amount_add = float(input('Enter amount of income:'))
+                amount_add = input('Enter amount of income:')
                 source_add = input('Enter a source of income :') 
-                date_add = input("Въведете дата във формат 'YYYY-MM-DD': ")
-                date = datetime.strptime(date_add, '%Y-%m-%d')    
-                if isinstance(amount_add, float) and isinstance(source_add, str) :
-                        add_income(amount_add,source_add,date)
-                else : 
-                            print('Error!!!')    
+                date_add = input("Въведете дата във формат 'DD-MM-YYYY': ")
+                date = None
+                try:
+                    date = datetime.strptime(date_add, '%d-%m-%Y') 
+                    amount_add = float(amount_add)
+                    
+                except ValueError:
+                        print(f'Wrong format')      
+                isinstance(amount_add, float) and isinstance(source_add, str) 
+                add_income(amount_add,source_add,date)
+                    
         elif menu_direction =='3':
-                amount_add = float(input('Enter amount of income:')) 
+                amount_add = input('Enter amount of income:') 
                 source_add = input('Enter a source of income :') 
-                date_add = input("Въведете дата във формат 'YYYY-MM-DD': ")
-                date = datetime.strptime(date_add, '%Y-%m-%d') 
-                if isinstance(amount_add, float) and isinstance(source_add, str):
-                    add_expense(amount_add,source_add,date)        
-                else :
-                        print('Error!!!')
+                date_add = input("Въведете дата във формат 'DD-MM-YYYY': ")
+                date = None
+                try:
+                    date = datetime.strptime(date_add, 'd%-m%-Y%') 
+                    amount_add = float(amount_add)
+                except ValueError :
+                        print(f'Wrong format')  
+                isinstance(amount_add, float) and isinstance(source_add, str)
+                add_expense(amount_add,source_add,date)        
+                
         elif menu_direction == '4':
                 visualize_income_expense()
         elif menu_direction =='5':
