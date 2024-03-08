@@ -1,13 +1,25 @@
-from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime , func
+from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime , func , Enum
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 import matplotlib.pyplot as plt
+from enum import Enum as PythonEnum
 
 # Създаване на връзка към базата данни SQLite
 engine = create_engine('sqlite:///finance.db')
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
+
+class ExpenseType(PythonEnum):
+    FOOD = 'food'
+    TRANSPORT = 'transport'
+    HEALTHCARE = 'healthcare'
+    OTHER = 'other'
+class IncomeType(PythonEnum):
+    SALARY = 'Salary'
+    BONUSES = 'Bonuses'
+    PRESENT = 'Present'
+    OTHER = 'other'    
 
 # Дефиниране на модел за разходи
 class Expense(Base):
@@ -16,6 +28,7 @@ class Expense(Base):
     amount = Column(Float)
     date = Column(DateTime, default=datetime.now)
     description = Column(String)
+    type_of_expence = Column(Enum(ExpenseType))
 
 # Дефиниране на модел за приходи
 class Income(Base):
@@ -24,6 +37,7 @@ class Income(Base):
     amount = Column(Float)
     date = Column(DateTime, default=datetime.now)
     source = Column(String)
+    type_of_income = Column(Enum(IncomeType))
 
 # Създаване на таблиците в базата данни
 Base.metadata.create_all(engine)
@@ -69,19 +83,15 @@ def visualize_income_expense():
 
     plt.figure(figsize=(10, 5))
 
-    # Приходи
+    # Създаване на кръгов график за приходите
     plt.subplot(1, 2, 1)
-    plt.bar(income_dates, income_amounts, color='blue')
+    plt.pie(income_amounts, autopct='%1.1f%%', startangle=140)
     plt.title('Приходи по дата')
-    plt.xlabel('Дата')
-    plt.ylabel('Сума')
 
-    # Разходи
+    # Създаване на кръгов график за разходите
     plt.subplot(1, 2, 2)
-    plt.bar(expense_dates, expense_amounts, color='red')
+    plt.pie(expense_amounts,  autopct='%1.1f%%', startangle=140)
     plt.title('Разходи по дата')
-    plt.xlabel('Дата')
-    plt.ylabel('Сума')
 
     plt.tight_layout()
     plt.show()
@@ -98,7 +108,7 @@ def find_expense_count_daily(x):
 
 if __name__ == "__main__":
     while True :
-        menu_direction = input('Menu : \n 1)Check ballans \n 2)Add income \n 3)Add expense \n 4)Graphics of your wallet \n 5)Calculate \n 9)Exit')
+        menu_direction = input('Menu : \n 1)Check ballans \n 2)Add income \n 3)Add expense \n 4)Statistics of your wallet \n 9)Exit')
         if menu_direction == '1':
                  balance()
         elif menu_direction =='2':
@@ -116,23 +126,33 @@ if __name__ == "__main__":
                 add_income(amount_add,source_add,date)
                     
         elif menu_direction =='3':
-                amount_add = input('Enter amount of income:') 
+                expense_add = input('Enter amount of income:') 
                 source_add = input('Enter a source of income :') 
                 date_add = input("Въведете дата във формат 'DD-MM-YYYY': ")
                 date = None
                 try:
                     date = datetime.strptime(date_add, 'd%-m%-Y%') 
-                    amount_add = float(amount_add)
+                    expense_add = float(amount_add)
                 except ValueError :
                         print(f'Wrong format')  
-                isinstance(amount_add, float) and isinstance(source_add, str)
-                add_expense(amount_add,source_add,date)        
+                isinstance(expense_add, float) and isinstance(source_add, str)
+                add_expense(expense_add,source_add,date)        
                 
         elif menu_direction == '4':
-                visualize_income_expense()
-        elif menu_direction =='5':
-                daily_expence = float(input('Add daily expence'))
-                find_expense_count_daily(daily_expence)
+                while True :
+                    menu_direction_4  = input('1)See your incoms\n 2)See your expenses\n 3)See grapic of your wallet\n 4)Calculate funchio')
+                    if menu_direction_4 == '1':
+                        show_income()
+                    elif menu_direction_4 =='2':
+                            show_expense()
+                    elif menu_direction_4 == '3':        
+                        visualize_income_expense()
+                    elif menu_direction_4 == '4':
+                           daily_expence = float(input('Add daily expence'))
+                           find_expense_count_daily(daily_expence)                   
+                    else:
+                           break    
+       
 
 
         elif menu_direction == '9':
