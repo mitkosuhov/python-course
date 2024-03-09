@@ -10,17 +10,6 @@ engine = create_engine('sqlite:///finance.db')
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
 
-class ExpenseType(PythonEnum):
-    FOOD = 'food'
-    TRANSPORT = 'transport'
-    HEALTHCARE = 'healthcare'
-    OTHER = 'other'
-class IncomeType(PythonEnum):
-    SALARY = 'Salary'
-    BONUSES = 'Bonuses'
-    PRESENT = 'Present'
-    OTHER = 'other'    
-
 # Дефиниране на модел за разходи
 class Expense(Base):
     __tablename__ = 'expenses'
@@ -28,7 +17,8 @@ class Expense(Base):
     amount = Column(Float)
     date = Column(DateTime, default=datetime.now)
     description = Column(String)
-    type_of_expence = Column(Enum(ExpenseType))
+    type_of_expense = Column(String)
+   
 
 # Дефиниране на модел за приходи
 class Income(Base):
@@ -37,21 +27,22 @@ class Income(Base):
     amount = Column(Float)
     date = Column(DateTime, default=datetime.now)
     source = Column(String)
-    type_of_income = Column(Enum(IncomeType))
+    type_of_income = Column(String)
+    
 
 # Създаване на таблиците в базата данни
 Base.metadata.create_all(engine)
 
-def add_expense(x,y,z):
+def add_expense(x,y,z,):
                 # Добавяне на разход
                 session = Session()
                 new_expense = Expense(amount=x , description=y , date =z)
                 session.add(new_expense)
                 session.commit()
-def add_income(x,y,z):
+def add_income(x,y,z,):
             # Добавяне на приход
                 session = Session()
-                new_income = Income(amount=x, source=y , date =z)
+                new_income = Income(amount=x, source=y , date =z )
                 session.add(new_income)
                 session.commit()
 def show_expense():
@@ -129,14 +120,15 @@ if __name__ == "__main__":
                 expense_add = input('Enter amount of income:') 
                 source_add = input('Enter a source of income :') 
                 date_add = input("Въведете дата във формат 'DD-MM-YYYY': ")
-                date = None
+                date = None                 
                 try:
-                    date = datetime.strptime(date_add, 'd%-m%-Y%') 
-                    expense_add = float(amount_add)
-                except ValueError :
-                        print(f'Wrong format')  
-                isinstance(expense_add, float) and isinstance(source_add, str)
-                add_expense(expense_add,source_add,date)        
+                    date = datetime.strptime(date_add, '%d-%m-%Y') 
+                    expense_add = float(expense_add)
+                except ValueError:
+                    print('Wrong format')  
+
+                if isinstance(expense_add, float) and isinstance(source_add, str):
+                    add_expense(expense_add, source_add, date)       
                 
         elif menu_direction == '4':
                 while True :
