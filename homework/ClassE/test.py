@@ -1,14 +1,12 @@
-def binary_search(arr, target):
-    left = 0
-    right = len(arr) - 1
+from datetime import datetime 
 
-    while left <= right:
-        mid = (left + right) // 2
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
+date_add = input("Enter a data of income in format  'DD-MM-YYYY': ")
+                
+try:
+    date_enter = datetime.strptime(date_add, '%d-%m-%Y').date()
+    
+                    
+except ValueError:
+     print(f'Wrong format')   
 
-    return -1
+print(date_enter)     

@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime , func , Enum
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from datetime import datetime
+from datetime import datetime , date
 import matplotlib.pyplot as plt
 from enum import Enum as PythonEnum
 
@@ -9,6 +9,15 @@ from enum import Enum as PythonEnum
 engine = create_engine('sqlite:///finance.db')
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
+
+# Дефиниране на модел за приходи
+class Income(Base):
+    __tablename__ = 'incomes'
+    id = Column(Integer, primary_key=True)
+    amount = Column(Float)
+    date = Column(DateTime, default=datetime.now)
+    source = Column(String)
+    type_of_income = Column(String)
 
 # Дефиниране на модел за разходи
 class Expense(Base):
@@ -20,29 +29,21 @@ class Expense(Base):
     type_of_expense = Column(String)
    
 
-# Дефиниране на модел за приходи
-class Income(Base):
-    __tablename__ = 'incomes'
-    id = Column(Integer, primary_key=True)
-    amount = Column(Float)
-    date = Column(DateTime, default=datetime.now)
-    source = Column(String)
-    type_of_income = Column(String)
-    
 
+    
 # Създаване на таблиците в базата данни
 Base.metadata.create_all(engine)
 
-def add_expense(x,y,z,):
+def add_expense(x,y,z,q):
                 # Добавяне на разход
                 session = Session()
-                new_expense = Expense(amount=x , description=y , date =z)
+                new_expense = Expense(amount=x , description=y , date=z ,type_of_expense =q)
                 session.add(new_expense)
                 session.commit()
-def add_income(x,y,z,):
+def add_income(x,y,z,q):
             # Добавяне на приход
                 session = Session()
-                new_income = Income(amount=x, source=y , date =z )
+                new_income = Income(amount=x, source=y , date =z , type_of_income =q)
                 session.add(new_income)
                 session.commit()
 def show_expense():
@@ -50,13 +51,13 @@ def show_expense():
                 session = Session()
                 expenses = session.query(Expense).all()
                 for expense in expenses:
-                    print(f"Expense: {expense.description}, Amount: {expense.amount}, Date: {expense.date}")
+                    print(f"Expense: {expense.description}, Amount: {expense.amount}, Date: {expense.date} ,Type :{expense.type_of_expense}")
 def show_income():
             # Преглед на всички приходи
                 session = Session()
                 incomes = session.query(Income).all()
                 for income in incomes:
-                    print(f"Income: {income.source}, Amount: {income.amount}, Date: {income.date}")
+                    print(f"Income: {income.source}, Amount: {income.amount}, Date: {income.date} , Type :{income.type_of_income}")
 def balance():
             session = Session()
             total_income = session.query(func.sum(Income.amount)).scalar() or 0
@@ -105,30 +106,32 @@ if __name__ == "__main__":
         elif menu_direction =='2':
                 amount_add = input('Enter amount of income:')
                 source_add = input('Enter a source of income :') 
-                date_add = input("Въведете дата във формат 'DD-MM-YYYY': ")
-                date = None
+                date_add = input("Enter a data of income in format  'DD-MM-YYYY': ")
+                date_ = None
+                add_type_of_income = input('Enter a type of income :')
                 try:
-                    date = datetime.strptime(date_add, '%d-%m-%Y') 
+                    date_ = datetime.strptime(date_add, '%d-%m-%Y').date()
                     amount_add = float(amount_add)
                     
                 except ValueError:
                         print(f'Wrong format')      
-                isinstance(amount_add, float) and isinstance(source_add, str) 
-                add_income(amount_add,source_add,date)
+                isinstance(amount_add, float) and isinstance(source_add, str) and isinstance(add_type_of_income, str)
+                add_income(amount_add,source_add,date_,add_type_of_income)
                     
         elif menu_direction =='3':
-                expense_add = input('Enter amount of income:') 
-                source_add = input('Enter a source of income :') 
-                date_add = input("Въведете дата във формат 'DD-MM-YYYY': ")
-                date = None                 
+                expense_add = input('Enter amount of expense:') 
+                source_add = input('Enter a source of expense :') 
+                date_add = input("Enter a date of expense in fomrat 'DD-MM-YYYY': ")
+                date_ = None      
+                add_type_of_expense = input('Enter a type of expense :')           
                 try:
-                    date = datetime.strptime(date_add, '%d-%m-%Y') 
+                    date_ = datetime.strptime(date_add, '%d-%m-%Y').date()
                     expense_add = float(expense_add)
                 except ValueError:
                     print('Wrong format')  
 
-                if isinstance(expense_add, float) and isinstance(source_add, str):
-                    add_expense(expense_add, source_add, date)       
+                if isinstance(expense_add, float) and isinstance(source_add, str) and isinstance(add_type_of_expense, str) :
+                    add_expense(expense_add, source_add, date_ ,add_type_of_expense)       
                 
         elif menu_direction == '4':
                 while True :
