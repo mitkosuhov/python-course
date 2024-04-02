@@ -44,8 +44,8 @@ def calculate_scores_sum():
     return fighter1_score_sum, fighter2_score_sum
 
 count = 1
-fighter1 = input('Enter the name of the first fighter: ')
-fighter2 = input('Enter the name of the second fighter: ')
+fighter1 = input('Enter the name of the first fighter : ')
+fighter2 = input('Enter the name of the second fighter : ')
 
 while count <= 12 :
         print(f'Round {count} :')
