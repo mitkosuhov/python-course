@@ -42,12 +42,12 @@ def calculate_scores_sum():
     session.close()
 
     return fighter1_score_sum, fighter2_score_sum
-
-count = 1
+count =1
+rounds = int(input('Enter amount of rounds ?'))
 fighter1 = input('Enter the name of the first fighter : ')
 fighter2 = input('Enter the name of the second fighter : ')
 
-while count <= 12 :
+while rounds > 0 :
         print(f'Round {count} :')
         f1s = int(input(f"{fighter1} score :"))
         f2s = int(input(f"{fighter2} score :"))
@@ -56,8 +56,8 @@ while count <= 12 :
 
         print(f"Score for {fighter1} is: {fighter1_sum}")
         print(f"Score for {fighter2} is: {fighter2_sum}")
-        
         count += 1
+        rounds -= 1
         
 
 
