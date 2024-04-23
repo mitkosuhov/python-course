@@ -1,12 +1,18 @@
-from datetime import datetime 
+nums = [2,4,6,4,3,1,5,7,9,6,4,2,1,1,8,0,5,4,3]
+num1 = 3
 
-date_add = input("Enter a data of income in format  'DD-MM-YYYY': ")
-                
-try:
-    date_enter = datetime.strptime(date_add, '%d-%m-%Y').date()
-    
-                    
-except ValueError:
-     print(f'Wrong format')   
 
-print(date_enter)     
+def del_chek(x,y):
+    ansers = []
+    for i in x :
+        if i%y == 0  :
+            ansers.append(i) 
+    return ansers        
+        
+               
+
+
+
+print(del_chek(nums,num1))
+
+
