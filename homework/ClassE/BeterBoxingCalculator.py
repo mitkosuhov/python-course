@@ -7,7 +7,7 @@ import numpy as np
 from sqlalchemy import desc
 
 
-engine = create_engine('sqlite:///BoxingMach.db')
+engine = create_engine('sqlite:///BoxingMachh.db')
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
 
