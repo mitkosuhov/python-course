@@ -1,13 +1,11 @@
-numbers  = [1,3,2,5,4,8,7,9,12,1,3,5,7,11,14,9,8,8]
+import numpy as np
 
+# Създаване на матрици с NumPy
+matrix1 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+matrix2 = np.array([[2, 2, 2], [3, 3, 3], [4, 4, 4]])
 
+# Извършване на матрично умножение
+result = np.dot(matrix1, matrix2)
 
-def buble(x):
-    for i in x :
-        if x[i]>x[i+1]:
-            x[i] , x[i+1] = x[i+1] , x[i]
-        else :
-            continue    
-    return x 
-
-print(buble(numbers))
+# Отпечатване на резултата
+print(result)
