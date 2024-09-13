@@ -1,8 +1,7 @@
-import roman 
+n = 4 
 
-x = roman.fromRoman('IX')
-y = roman.toRoman(236)
-print(x)
-print(y)
-
+for i in range(0,n):
+    print(' '*(n-i)+"* "*(i+1))
+for i in range(1,n):
+    print(' '*(i+1)+"* "*(n-i))
 
