@@ -1,7 +1,7 @@
-n = 4 
+n = 3 
 
+print(' '*(n+1)+"|")
 for i in range(0,n):
-    print(' '*(n-i)+"* "*(i+1))
-for i in range(1,n):
-    print(' '*(i+1)+"* "*(n-i))
+    print(' '*(n-i)+"*"*(i+1)+"|"+"*"*(i+1))
+
 
